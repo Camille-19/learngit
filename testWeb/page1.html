@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+	<title>page1</title>
+	<script type="text/javascript" src="jquery-1.7.2.min.js"></script>
+</head>
+<style>
+	td {
+		text-align: center;
+		width: 80px;
+		height: 40px;
+	}
+
+	nav {
+		text-align: center;
+		margin-top: 20px;
+	}
+
+	nav button {
+		margin-top: 8px;
+		margin-left: 8px;
+		background: #ECEBE6;
+		border-radius: 5px;
+	}
+
+	.page {
+		width: 720px;
+		border: 1px solid;
+		height: 376px;
+		height:360px\9; /*IE8*/ 
+		margin: auto;
+		text-align: center;
+	}
+
+
+	.department {
+		float: left;
+		border: 1px solid;
+		margin-left: 2px;
+		margin-top: 31px;
+		height:300px;
+		line-height: 300px;
+	}
+
+	.title {
+		text-align: center;
+		background: #87CEEB;
+		border: 1px solid;
+		width: 200px;
+		height: 40px;
+		line-height: 40px;
+		margin: 1px;
+		cursor: pointer;
+	}
+
+	.info {
+		float: left;
+		border: 1px solid;
+		height:300px;
+		margin-top: 30px;
+		margin-left: 2px;
+	}
+
+	.show {
+		cursor: pointer;
+	}
+
+
+	table {
+  		border-collapse:collapse;
+  	}
+
+	table, td, tr {
+  		border:1px solid black;
+ 	}
+
+ 	.tron1 {
+ 		color: red;
+ 	}
+
+ 	.tron2 {
+ 		background-color: #bfbfbf;
+ 	}
+
+ 	#name {
+ 		border:none;
+    	outline:medium;
+ 	}
+
+</style>
+<body>
+	<div class="page" style="margin:auto;padding-top:20px;">
+		<nav>姓名/账号：<input type='text' style='border:none;border-bottom:black solid 1px' id="name"><input type="button" value="查询">
+
+		<input type="button" onclick="window.location.href='page2.html'" class="searchbut" value="新增"></nav>
+
+		<div class="department" >
+			<div class="titlebar" style="margin-top:109px;">
+			<table style="text-align:center;margin-top:20px;overflow:hidden;border:none">
+				<tr style="border:none"><td style="border:none"><div class="title">开发部</div></td></tr>
+				<tr style="border:none"><td style="border:none"><div class="title">测试部</div></td></tr>  
+			</table>
+		</div>
+		</div>
+
+		<div class="content" style="padding:1px;">
+			<div class="info" height="200px">
+			<table style="margin:1px;">
+				<tr style="background:#87CEEB;">
+					<td>序号</td>
+					<td>查看</td>
+					<td>删除</td>
+					<td>修改</td>
+					<td>姓名</td>
+					<td>账号</td>
+				</tr>
+
+				<tr class="change">
+					<td>1</td>
+					<td class="show">【查看】</td>
+					<td class="show">【删除】</td>
+					<td class="show">【修改】</td>
+					<td>aaaa</td>
+					<td>3200001</td>
+				</tr>
+
+				<tr class="change">
+					<td>2</td>
+					<td class="show">【查看】</td>
+					<td class="show">【删除】</td>
+					<td class="show">【修改】</td>
+					<td>bbbbb</td>
+					<td>3200002</td>
+				</tr>
+
+				<tr class="change">
+					<td>3</td>
+					<td class="show">【查看】</td>
+					<td class="show">【删除】</td>
+					<td class="show">【修改】</td>
+					<td>vcccc</td>
+					<td>3200003</td>
+				</tr>
+
+				<tr class="change">
+					<td>3</td>
+					<td class="show">【查看】</td>
+					<td class="show">【删除】</td>
+					<td class="show">【修改】</td>
+					<td>vcccc</td>
+					<td>3200003</td>
+				</tr>
+			</table>
+		</div>
+		</div>
+
+	</div>
+</body>
+	<script>
+		$('td.show').click(function(event) {
+			alert($(this).html());
+		});
+
+		$('td.show,div.title').hover(function() {
+			$(this).addClass('tron1');
+		},function(){
+			$(this).removeClass('tron1');
+		});
+
+		$('.info table tr').hover(function() {
+			$(this).addClass('tron2');
+		},function(){
+			$(this).removeClass('tron2');
+		});
+	</script>
+</html>

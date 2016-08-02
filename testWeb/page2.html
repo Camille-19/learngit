@@ -1,0 +1,149 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+	<title>page2</title>
+	<script type="text/javascript" src="jquery-1.7.2.min.js"></script>
+</head>
+<style>
+	table {
+  		border-collapse:collapse;
+  		font-size: 12px;
+  	}
+
+	table, td, tr {
+  		border:1px solid #B9D3EE;
+  		text-align: right;
+ 	}
+
+ 	td {
+ 		width: 80px;
+ 		height: 30px;
+ 		line-height: 30px;
+ 	}
+
+ 	select::-ms-expand {
+ 		display: none; 
+ 	}
+
+
+ 	.show2 {
+ 		background-color: #E8F7FF;
+ 	}
+
+ 	button {
+ 		background: #F0F0EA;
+ 		border-radius: 5px;
+ 		margin-left: 13px\9;
+ 	}
+
+ 	.content {
+ 		width: 730px;
+ 		height: auto;
+ 		border: none;
+ 	}
+
+ 	.submit {
+ 		margin-top: 20px;
+ 	}
+
+ 	td input {
+ 		width: auto;
+ 		height: 100%;
+ 		float: left;
+ 		border: none;
+ 		outline: medium;
+ 	}
+
+ 	select {
+ 		width: 100%;
+ 		width: 194%\9;
+ 	}
+
+ 	td input.focus{ outline:none; }
+</style>
+<body>
+	<div class="content" style="margin:auto;">
+	<table>
+		<tr>
+			<td class="show2"><span style="color:red;">*</span>用户ID</td>
+			<td><input type="text" class="request" msg="用户ID"></td>
+			<td class="show2"><span style="color:red;">*</span>口令</td>
+			<td><input type="text" class="request" msg="口令" id="order1"></td>
+			<td class="show2"><span style="color:red;">*</span>确认口令</td>
+			<td><input type="text" class="request" msg="确认口令" id="order2"></td>
+		</tr>
+
+		<tr>
+			<td class="show2"><span style="color:red;">*</span>姓名</td>
+			<td><input type="text" class="request" msg="姓名"></td>
+			<td class="show2" >性别</td>
+			<td>
+				<div class="select_border">
+      				<div class="container">
+         				<select name="" class="select">
+                			<option>男</option>
+                			<option>女</option>
+             			</select>
+         			</div>
+     			</div>
+			</td>
+			<td class="show2">部门</td>
+			<td>
+				<div class="select_border">
+      				<div class="container">
+         				<select name="" class="select">
+                			<option>测试</option>
+                			<option>开发</option>
+                			<option>人力资源</option>
+             			</select>
+         			</div>
+     			</div>
+			</td>
+		</tr>
+
+		<tr>
+			<td class="show2"><span style="color:red;">*</span>出生日期</td>
+			<td><input type="text" class="request" msg="出生日期"></td>
+			<td class="show2">排序号</td>
+			<td><input type="text"></td>
+			<td class="show2">禁用</td>
+			<td><input type="checkbox" class="checkbox" style="float:left;"></td>
+		</tr>
+	</table>
+
+	<div class="submit" style="text-align:center;">
+		<button id="hold" onclick="return checkNull()">保存</button>
+		<button id="back" onclick="javascript:history.back(-1);">返回</button>
+	</div>
+	</div>
+</body>
+
+<script>
+
+	function checkNull() {
+		var num = 0;
+		var str="";
+		$('input.request').each(function() {
+			if ($(this).val()=="") {
+				num++;
+				str+=$(this).attr("msg")+"不能为空！\r\n";
+			}
+		});
+
+		if (num>0) {
+			alert(str);
+			return false;
+		} else {
+			if ($('#order1').val()==$('#order2').val()) {
+			alert("保存成功!");
+			history.back(-1);
+			return true;
+		} else {
+			alert("两次输入口令不一致！");
+		}
+		}
+	}
+</script>
+</html>
